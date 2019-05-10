@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { AppLoginComponent } from './app-login/app-login.component';
 import { AppCallbackComponent } from './app-callback/app-callback.component';
 import { AppLogoutComponent } from './app-logout/app-logout.component';
+import { AppStatus404Component } from './app-status404.component';
+import { AppHomeComponent } from './app-home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppLoginComponent,
     AppCallbackComponent,
-    AppLogoutComponent
+    AppLogoutComponent,
+    AppStatus404Component,
+    AppHomeComponent
   ],
   imports: [
     BrowserModule,
