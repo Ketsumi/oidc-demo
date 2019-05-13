@@ -342,11 +342,12 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 var routes = [
+    { path: '', component: _app_home_component__WEBPACK_IMPORTED_MODULE_2__["AppHomeComponent"] },
     { path: 'login', component: _app_login_component__WEBPACK_IMPORTED_MODULE_3__["AppLoginComponent"] },
     { path: 'logout', component: _app_logout_component__WEBPACK_IMPORTED_MODULE_4__["AppLogoutComponent"] },
     { path: 'callback', component: _app_callback_component__WEBPACK_IMPORTED_MODULE_5__["AppCallbackComponent"] },
-    { path: '', component: _app_home_component__WEBPACK_IMPORTED_MODULE_2__["AppHomeComponent"], pathMatch: 'full' },
-    { path: '**', component: _app_status404_component__WEBPACK_IMPORTED_MODULE_6__["AppStatus404Component"] }
+    { path: 'status404', component: _app_status404_component__WEBPACK_IMPORTED_MODULE_6__["AppStatus404Component"] },
+    { path: '**', redirectTo: '/status404', pathMatch: 'full' }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
