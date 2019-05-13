@@ -8,11 +8,12 @@ import { AppCallbackComponent } from './app-callback.component';
 import { AppStatus404Component } from './app-status404.component';
 
 const routes: Routes = [
+	{ path: '', component: AppHomeComponent },
 	{ path: 'login', component: AppLoginComponent },
 	{ path: 'logout', component: AppLogoutComponent },
 	{ path: 'callback', component: AppCallbackComponent },
-	{ path: '', component: AppHomeComponent, pathMatch: 'full' },
-	{ path: '**', component: AppStatus404Component }
+	{ path: 'status404', component: AppStatus404Component },
+	{ path: '**', redirectTo: '/status404', pathMatch: 'full' }
 ];
 
 @NgModule({
