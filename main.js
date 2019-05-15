@@ -182,7 +182,6 @@ module.exports = ""
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppLoginComponent", function() { return AppLoginComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _config_authentication_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../config/authentication.js */ "./src/config/authentication.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -193,10 +192,10 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-
 var AppLoginComponent = /** @class */ (function () {
     function AppLoginComponent() {
-        this.googleUrl = this.generateUrl('https://accounts.google.com/o/oauth2/v2/auth?', _config_authentication_js__WEBPACK_IMPORTED_MODULE_1__["Auth"].google);
+        // this.googleUrl = this.generateUrl('https://accounts.google.com/o/oauth2/v2/auth?', Auth.google);
+        this.googleUrl = 'https://ve73ea98ph.execute-api.us-east-1.amazonaws.com/dev/api/auth/google';
     }
     AppLoginComponent.prototype.ngOnInit = function () {
     };
@@ -544,40 +543,6 @@ var AppModule = /** @class */ (function () {
     return AppModule;
 }());
 
-
-
-/***/ }),
-
-/***/ "./src/config/authentication.js":
-/*!**************************************!*\
-  !*** ./src/config/authentication.js ***!
-  \**************************************/
-/*! exports provided: Auth */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Auth", function() { return Auth; });
-const Auth = {
-	google: {
-		client_id: '986484840298-7sk3u5a07btmvpl4r4uqi0s5m9qrnljo.apps.googleusercontent.com',
-		redirect_uri: 'https://ketsumi.github.io/oidc-demo/callback',
-		response_type: 'id_token',
-		scope: 'openid profile'
-	},
-	twitter: {
-		client_id: '',
-		redirect_uri: '',
-		response_type: '',
-		scope: ''
-	},
-	github: {
-		client_id: '',
-		redirect_uri: '',
-		response_type: '',
-		scope: ''
-	}
-};
 
 
 /***/ }),
