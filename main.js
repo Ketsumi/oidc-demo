@@ -56,6 +56,8 @@ module.exports = ""
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppCallbackComponent", function() { return AppCallbackComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -66,10 +68,18 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var AppCallbackComponent = /** @class */ (function () {
-    function AppCallbackComponent() {
+    function AppCallbackComponent(location, http) {
+        this.location = location;
+        this.http = http;
     }
     AppCallbackComponent.prototype.ngOnInit = function () {
+        this.http.post('https://ve73ea98ph.execute-api.us-east-1.amazonaws.com/dev/api/auth/callback', {
+            url: location.href
+        });
+        console.log(location.href);
     };
     AppCallbackComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -77,7 +87,7 @@ var AppCallbackComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./app-callback.component.html */ "./src/app/app-callback.component.html"),
             styles: [__webpack_require__(/*! ./app-callback.component.sass */ "./src/app/app-callback.component.sass")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_angular_common__WEBPACK_IMPORTED_MODULE_1__["Location"], _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
     ], AppCallbackComponent);
     return AppCallbackComponent;
 }());
@@ -497,13 +507,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _app_login_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app-login.component */ "./src/app/app-login.component.ts");
-/* harmony import */ var _app_callback_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app-callback.component */ "./src/app/app-callback.component.ts");
-/* harmony import */ var _app_logout_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app-logout.component */ "./src/app/app-logout.component.ts");
-/* harmony import */ var _app_status404_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app-status404.component */ "./src/app/app-status404.component.ts");
-/* harmony import */ var _app_home_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app-home.component */ "./src/app/app-home.component.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _app_login_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app-login.component */ "./src/app/app-login.component.ts");
+/* harmony import */ var _app_callback_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app-callback.component */ "./src/app/app-callback.component.ts");
+/* harmony import */ var _app_logout_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app-logout.component */ "./src/app/app-logout.component.ts");
+/* harmony import */ var _app_status404_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app-status404.component */ "./src/app/app-status404.component.ts");
+/* harmony import */ var _app_home_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./app-home.component */ "./src/app/app-home.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -519,25 +530,27 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
-                _app_login_component__WEBPACK_IMPORTED_MODULE_4__["AppLoginComponent"],
-                _app_callback_component__WEBPACK_IMPORTED_MODULE_5__["AppCallbackComponent"],
-                _app_logout_component__WEBPACK_IMPORTED_MODULE_6__["AppLogoutComponent"],
-                _app_status404_component__WEBPACK_IMPORTED_MODULE_7__["AppStatus404Component"],
-                _app_home_component__WEBPACK_IMPORTED_MODULE_8__["AppHomeComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
+                _app_login_component__WEBPACK_IMPORTED_MODULE_5__["AppLoginComponent"],
+                _app_callback_component__WEBPACK_IMPORTED_MODULE_6__["AppCallbackComponent"],
+                _app_logout_component__WEBPACK_IMPORTED_MODULE_7__["AppLogoutComponent"],
+                _app_status404_component__WEBPACK_IMPORTED_MODULE_8__["AppStatus404Component"],
+                _app_home_component__WEBPACK_IMPORTED_MODULE_9__["AppHomeComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"]
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"]
             ],
             providers: [],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
