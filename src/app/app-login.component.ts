@@ -10,7 +10,8 @@ export class AppLoginComponent implements OnInit {
   private googleUrl: string;
 
   constructor() {
-    this.googleUrl = this.generateUrl('https://accounts.google.com/o/oauth2/v2/auth?', Auth.google);
+    // this.googleUrl = this.generateUrl('https://accounts.google.com/o/oauth2/v2/auth?', Auth.google);
+    this.googleUrl = 'https://auth.mewtropolis.me/api/auth/google';
   }
 
   ngOnInit() {

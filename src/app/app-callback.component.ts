@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-app-callback',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppCallbackComponent implements OnInit {
 
-  constructor() { }
+  constructor(private location: Location, private http: HttpClient) { }
 
   ngOnInit() {
-  }
+  	this.http.post('https://auth.mewtropolis.me/api/auth/callback', {
+  		url: location.href
+  	});
 
+  	console.log(location.href);
+  }
 }
