@@ -76,7 +76,7 @@ var AppCallbackComponent = /** @class */ (function () {
         this.http = http;
     }
     AppCallbackComponent.prototype.ngOnInit = function () {
-        this.http.post('https://ve73ea98ph.execute-api.us-east-1.amazonaws.com/dev/api/auth/callback', {
+        this.http.post('https://auth.mewtropolis.me/api/auth/callback', {
             url: location.href
         });
         console.log(location.href);
@@ -205,7 +205,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var AppLoginComponent = /** @class */ (function () {
     function AppLoginComponent() {
         // this.googleUrl = this.generateUrl('https://accounts.google.com/o/oauth2/v2/auth?', Auth.google);
-        this.googleUrl = 'https://ve73ea98ph.execute-api.us-east-1.amazonaws.com/dev/api/auth/google';
+        this.googleUrl = 'https://auth.mewtropolis.me/api/auth/google';
     }
     AppLoginComponent.prototype.ngOnInit = function () {
     };
